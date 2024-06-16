@@ -12,11 +12,11 @@ const TaskController = {
     },
     async getAll(req, res) {
         try {
-            const { page = 1, limit = 10 } = req.query;
+            const { page = 1, limit = 20 } = req.query;
             const task = await Task.find()
                 .limit(limit)
                 .skip((page - 1) * limit);
-            res.send(task);
+            res.status(200).send(task);
         } catch (error) {
             console.error(error);
             res.status(500).send({

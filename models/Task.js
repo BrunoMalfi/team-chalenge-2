@@ -7,7 +7,15 @@ const TaskSchema = new mongoose.Schema(
             type: String,
             required: [true, "Please provide a title for this task"],
         },
-        completed:{type:Boolean}
+        completed:{type:Boolean},
+        description: {
+            type: String,
+            required: [true, "Please provide a description for this task"],
+        },
+        priority: {
+            type: String,
+            required: [true, "Please provide a priority for this task"],
+        },
     },
     { timestamps: true },
 );
